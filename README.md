@@ -57,11 +57,8 @@ we then want to mount a shared volume from the host to the docker which is the p
 sudo docker run -it --name centos7repos -v /repo-drive/centos7:/repos centos /bin/bash
 ```
 
-```
-sudo docker start centos7repos
+At this point you should be placed inside of the docker
 
-sudo docker attach centos7repos
-```
 
 === Inside the docker ===
 Once you are inside of the docker, you will need to install a few packages.
@@ -79,4 +76,14 @@ reposync --repoid=base --repoid=centosplus --repoid=updates --repoid=extras --re
 cd /repos
 
 createrepo base && createrepo centosplus && createrepo updates && createrepo extras && createrepo epel
+```
+
+When the createrepo is compleate, you will need to exit docker, you can type exit or CTRL+C.
+
+In the future when you want to open the docker again you can start it and attach to it with the following.
+
+```
+sudo docker start centos7repos
+
+sudo docker attach centos7repos
 ```
