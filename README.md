@@ -60,8 +60,8 @@ sudo docker run -it --name centos7repos -v /repo-drive/centos7:/repos centos /bi
 At this point you should be placed inside of the docker
 
 
-=== Inside the docker ===
-Once you are inside of the docker, you will need to install a few packages.
+# Inside the docker or start here on a local machine
+You will need to install a few packages.
 
 ```
 yum install yum-utils.noarch epel-release.noarch ntfs-3g ntfs-progs createrepo -y
@@ -78,6 +78,7 @@ cd /repos
 createrepo base && createrepo centosplus && createrepo updates && createrepo extras && createrepo epel
 ```
 
+# If you are using docker follow these directions, but if you are using a local box you are finished
 When the createrepo is compleate, you will need to exit docker, you can type exit or CTRL+C.
 
 In the future when you want to open the docker again you can start it and attach to it with the following.
